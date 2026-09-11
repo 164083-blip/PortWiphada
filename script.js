@@ -411,3 +411,47 @@ pages.forEach(function (page, index) {
     }
 
 });
+/* =====================================================
+   8. PORTFOLIO PROGRESS BAR
+   ===================================================== */
+
+const progressBar =
+    document.getElementById("progress-bar");
+
+
+const pageObserver =
+    new IntersectionObserver(
+
+        function (entries) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    const pageIndex =
+                        Array.from(pages)
+                            .indexOf(entry.target);
+
+                    const progress =
+                        ((pageIndex + 1) / pages.length) * 100;
+
+                    progressBar.style.width =
+                        progress + "%";
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.5
+        }
+
+    );
+
+
+pages.forEach(function (page) {
+
+    pageObserver.observe(page);
+
+});

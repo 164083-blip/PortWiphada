@@ -715,3 +715,149 @@ a:focus-visible {
     }
 
 }
+/* =====================================================
+   JAVASCRIPT EFFECTS
+   ===================================================== */
+
+.nav-menu a.active {
+    color: var(--white);
+    background: var(--navy);
+}
+
+.animate {
+    opacity: 0;
+    transform: translateY(25px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.animate.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    color: var(--white);
+    background: var(--navy);
+
+    font-size: 20px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(10px);
+
+    transition: all 0.3s ease;
+
+    z-index: 900;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--gold);
+    transform: translateY(-3px);
+}
+
+.image-viewer {
+    position: fixed;
+    inset: 0;
+
+    z-index: 2000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: rgba(10, 18, 55, 0.94);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.3s ease;
+}
+
+.image-viewer.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.image-viewer img {
+    max-width: 92vw;
+    max-height: 92vh;
+
+    object-fit: contain;
+
+    border-radius: 5px;
+
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.35);
+}
+
+.viewer-close {
+    position: absolute;
+
+    top: 20px;
+    right: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.12);
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+.viewer-close:hover {
+    color: var(--navy);
+    background: var(--gold);
+}
+
+@media (max-width: 600px) {
+
+    .back-to-top {
+        right: 15px;
+        bottom: 15px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .image-viewer {
+        padding: 15px;
+    }
+
+    .viewer-close {
+        top: 12px;
+        right: 12px;
+    }
+
+}

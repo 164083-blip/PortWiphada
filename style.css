@@ -1,1 +1,313 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, "Noto Sans Thai", sans-serif;
+    background: #f8f9fc;
+    color: #333;
+}
+
+
+/* เมนู */
+
+header {
+    width: 100%;
+    background: white;
+    padding: 18px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #5c65d8;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+
+    margin-left: 25px;
+
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #5c65d8;
+}
+
+
+/* หน้าแรก */
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 70px;
+
+    padding: 70px 10%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef0ff,
+            #ffffff
+        );
+}
+
+.hero-text {
+    max-width: 550px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    color: #363a70;
+
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+
+    color: #666;
+}
+
+.button {
+    display: inline-block;
+
+    background: #5c65d8;
+    color: white;
+
+    text-decoration: none;
+
+    padding: 14px 30px;
+
+    border-radius: 30px;
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    background: #454ebc;
+}
+
+.hero-image img {
+    width: 350px;
+    height: 430px;
+
+    object-fit: cover;
+
+    border-radius: 30px;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+
+/* เกี่ยวกับฉัน */
+
+.about {
+    padding: 90px 10%;
+    background: white;
+}
+
+.about h2,
+.gallery h2,
+.contact h2 {
+    text-align: center;
+
+    font-size: 35px;
+
+    margin-bottom: 50px;
+
+    color: #363a70;
+}
+
+.about-container {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 60px;
+}
+
+.about-container img {
+    width: 320px;
+    height: 320px;
+
+    object-fit: cover;
+
+    border-radius: 25px;
+}
+
+.about-text {
+    max-width: 550px;
+}
+
+.about-text h3 {
+    font-size: 27px;
+
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    line-height: 1.9;
+
+    color: #666;
+
+    margin-bottom: 15px;
+}
+
+
+/* Gallery */
+
+.gallery {
+    padding: 90px 8%;
+}
+
+.gallery-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 30px;
+}
+
+.card {
+    background: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+}
+
+.card-text {
+    padding: 20px;
+}
+
+.card-text h3 {
+    color: #4d55c5;
+
+    margin-bottom: 10px;
+}
+
+.card-text p {
+    color: #666;
+
+    line-height: 1.7;
+}
+
+
+/* Contact */
+
+.contact {
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background: white;
+}
+
+.contact p {
+    margin: 15px;
+
+    font-size: 18px;
+}
+
+
+/* Footer */
+
+footer {
+    background: #363a70;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+
+/* มือถือ */
+
+@media (max-width: 800px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 13px;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding-top: 60px;
+    }
+
+    .hero-text h1 {
+        font-size: 35px;
+    }
+
+    .hero-image img {
+        width: 280px;
+        height: 350px;
+    }
+
+    .about-container {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .about-container img {
+        width: 260px;
+        height: 260px;
+    }
+}

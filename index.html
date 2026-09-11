@@ -4,145 +4,612 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Website</title>
+    <meta name="description"
+          content="Portfolio วิภาดา แสงจันทร์ - สาขาการจัดการโลจิสติกส์">
+
+    <title>Portfolio | วิภาดา แสงจันทร์</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- เมนูด้านบน -->
-    <header>
-        <div class="logo">MY WEBSITE</div>
+    <!-- =========================
+         เมนูเว็บไซต์
+         ========================= -->
+    <header class="navbar">
 
-        <nav>
-            <a href="#home">หน้าแรก</a>
-            <a href="#about">เกี่ยวกับฉัน</a>
-            <a href="#gallery">ผลงาน</a>
-            <a href="#contact">ติดต่อ</a>
+        <a class="brand" href="#page-1">
+            <span class="brand-dot"></span>
+            PORTFOLIO
+        </a>
+
+        <nav class="nav-menu" aria-label="เมนูพอร์ต">
+
+            <a href="#page-1">หน้าปก</a>
+            <a href="#page-2">SOP</a>
+            <a href="#page-3">Profile</a>
+            <a href="#page-4">ผลการเรียน</a>
+            <a href="#page-5">ธุรกิจ</a>
+            <a href="#page-6">ผู้นำ</a>
+            <a href="#page-7">คิดวิเคราะห์</a>
+            <a href="#page-8">การสื่อสาร</a>
+            <a href="#page-9">เกียรติบัตร 1</a>
+            <a href="#page-10">เกียรติบัตร 2</a>
+            <a href="#page-11">เกียรติบัตร 3</a>
+            <a href="#page-12">ปกหลัง</a>
+
         </nav>
+
     </header>
 
 
-    <!-- หน้าแรก -->
-    <section id="home" class="hero">
+    <!-- =========================
+         HERO
+         ========================= -->
+    <section class="hero">
 
-        <div class="hero-text">
-            <h1>ยินดีต้อนรับสู่เว็บไซต์ของฉัน</h1>
+        <div class="hero-content">
 
-            <p>
-                เว็บไซต์นี้จัดทำขึ้นเพื่อรวบรวมข้อมูล
-                ผลงาน กิจกรรม และประสบการณ์ของฉัน
+            <p class="eyebrow">
+                PORTFOLIO • LOGISTICS MANAGEMENT
             </p>
 
-            <a href="#gallery" class="button">
-                ดูผลงาน
+            <h1>
+                วิภาดา <span>แสงจันทร์</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                วิทยาลัยโลจิสติกส์และซัพพลายเชน<br>
+                สาขาการจัดการโลจิสติกส์<br>
+                มหาวิทยาลัยราชภัฏสวนสุนันทา
+                (วิทยาเขตนครปฐม)
+            </p>
+
+            <a class="hero-button" href="#page-1">
+                เริ่มดู Portfolio
+                <span>↓</span>
             </a>
-        </div>
-
-        <!-- เปลี่ยน photo1.jpg เป็นชื่อรูปของตัวเอง -->
-        <div class="hero-image">
-            <img src="images/photo1.jpg" alt="รูปภาพของฉัน">
-        </div>
-
-    </section>
-
-
-    <!-- เกี่ยวกับฉัน -->
-    <section id="about" class="about">
-
-        <h2>เกี่ยวกับฉัน</h2>
-
-        <div class="about-container">
-
-            <!-- รูป -->
-            <img src="images/photo2.jpg" alt="About Me">
-
-            <div class="about-text">
-                <h3>สวัสดีค่ะ 👋</h3>
-
-                <p>
-                    ฉันชื่อ วิภาดา แสงจันทร์
-                    เว็บไซต์นี้สร้างขึ้นเพื่อรวบรวมผลงาน
-                    กิจกรรม และประสบการณ์ต่าง ๆ
-                </p>
-
-                <p>
-                    สามารถแก้ไขข้อความตรงนี้
-                    ให้เป็นข้อมูลของตัวเองได้เลยค่ะ
-                </p>
-            </div>
 
         </div>
 
     </section>
 
 
-    <!-- ผลงาน -->
-    <section id="gallery" class="gallery">
+    <main>
 
-        <h2>ผลงานของฉัน</h2>
+        <!-- =========================
+             หน้า 1
+             ========================= -->
+        <section class="portfolio-page" id="page-1">
 
-        <div class="gallery-container">
+            <div class="page-heading">
 
-            <div class="card">
-                <img src="images/photo1.jpg" alt="ผลงานที่ 1">
+                <span>01</span>
 
-                <div class="card-text">
-                    <h3>ผลงานที่ 1</h3>
-                    <p>ใส่รายละเอียดผลงานหรือกิจกรรมตรงนี้</p>
+                <div>
+                    <h2>หน้าปก</h2>
+                    <p>Portfolio • Logistics Management</p>
                 </div>
+
             </div>
 
+            <div class="page-card">
 
-            <div class="card">
-                <img src="images/photo2.jpg" alt="ผลงานที่ 2">
+                <img
+                    src="images/page01.png"
+                    alt="หน้าปก Portfolio วิภาดา แสงจันทร์"
+                    class="portfolio-image zoomable"
+                    loading="eager"
+                >
 
-                <div class="card-text">
-                    <h3>ผลงานที่ 2</h3>
-                    <p>ใส่รายละเอียดผลงานหรือกิจกรรมตรงนี้</p>
-                </div>
             </div>
 
+        </section>
 
-            <div class="card">
-                <img src="images/photo3.jpg" alt="ผลงานที่ 3">
 
-                <div class="card-text">
-                    <h3>ผลงานที่ 3</h3>
-                    <p>ใส่รายละเอียดผลงานหรือกิจกรรมตรงนี้</p>
+        <!-- =========================
+             หน้า 2
+             ========================= -->
+        <section class="portfolio-page" id="page-2">
+
+            <div class="page-heading">
+
+                <span>02</span>
+
+                <div>
+                    <h2>Statement of Purpose</h2>
+                    <p>เหตุผลและแรงบันดาลใจในการศึกษาต่อ</p>
                 </div>
+
             </div>
 
+            <div class="page-card">
 
-            <div class="card">
-                <img src="images/photo4.jpg" alt="ผลงานที่ 4">
+                <img
+                    src="images/page02.png"
+                    alt="Statement of Purpose"
+                    class="portfolio-image zoomable"
+                    loading="lazy"
+                >
 
-                <div class="card-text">
-                    <h3>ผลงานที่ 4</h3>
-                    <p>ใส่รายละเอียดผลงานหรือกิจกรรมตรงนี้</p>
-                </div>
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- ติดต่อ -->
-    <section id="contact" class="contact">
+        <!-- =========================
+             หน้า 3
+             ========================= -->
+        <section class="portfolio-page" id="page-3">
 
-        <h2>ติดต่อ</h2>
+            <div class="page-heading">
 
-        <p>📧 Email : your@email.com</p>
-        <p>📱 Instagram : @yourinstagram</p>
+                <span>03</span>
 
-    </section>
+                <div>
+                    <h2>ประวัติส่วนตัว</h2>
+                    <p>Profile</p>
+                </div>
+
+            </div>
+
+            <div class="page-card">
+
+                <img
+                    src="images/page03.png"
+                    alt="ประวัติส่วนตัว Profile"
+                    class="portfolio-image zoomable"
+                    loading="lazy"
+                >
+
+            </div>
+
+        </section>
 
 
+        <!-- =========================
+             หน้า 4
+             ========================= -->
+        <section class="portfolio-page" id="page-4">
+
+            <div class="page-heading">
+
+                <span>04</span>
+
+                <div>
+                    <h2>ผลการเรียน</h2>
+                    <p>Transcript • GPAX 3.75</p>
+                </div>
+
+            </div>
+
+            <div class="page-card">
+
+                <img
+                    src="images/page04.png"
+                    alt="ใบแสดงผลการเรียน GPAX 3.75"
+                    class="portfolio-image zoomable"
+                    loading="lazy"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             หน้า 5
+             ========================= -->
+        <section class="portfolio-page" id="page-5">
+
+            <div class="page-heading">
+
+                <span>05</span>
+
+                <div>
+                    <h2>ผลงานด้านธุรกิจและการค้าขาย</h2>
+                    <p>
+                        ประสบการณ์ด้านธุรกิจ การจัดการ และการค้าขาย
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="page-card">
+
+                <img
+                    src="images/page05.png"
+                    alt="ผลงานด้านธุรกิจและการค้าขาย"
+                    class="portfolio-image zoomable"
+                    loading="lazy"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             หน้า 6
+             ========================= -->
+        <section class="portfolio-page" id="page-6">
+
+            <div class="page-heading">
+
+                <span>06</span>
+
+                <div>
+                    <h2>ผลงานด้านความเป็นผู้นำ</h2>
+                    <p>
+                        Leadership • การจัดกิจกรรม • การทำงานเป็นทีม
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="page-card">
+
+                <img
+                    src="images/page06.png"
+                    alt="ผลงานด้านความเป็นผู้นำ"
+                    class="portfolio-image zoomable"
+                    loading="lazy"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             หน้า 7
+             ========================= -->
+        <section class="portfolio-page" id="page-7">
+
+            <div class="page-heading">
+
+                <span>07</span>
+
+                <div>
+                    <h2>การคิดวิเคราะห์และแก้ปัญหา</h2>
+                    <p>
+                        Problem Solving • STEM • การวิเคราะห์และปรับปรุง
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="page-card">
+
+                <img
+                    src="images/page07.png"
+                    alt="ผลงานด้านการคิดวิเคราะห์และแก้ปัญหา"
+                    class="portfolio-image zoomable"
+                    loading="lazy"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             หน้า 8
+             ========================= -->
+        <section class="portfolio-page" id="page-8">
+
+            <div class="page-heading">
+
+                <span>08</span>
+
+                <div>
+                    <h2>ผลงานด้านการสื่อสาร</h2>
+                    <p>
+                        Communication • การนำเสนอ • การพูดในที่สาธารณะ
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="page-card">
+
+                <img
+                    src="images/page08.png"
+                    alt="ผลงานด้านการสื่อสาร"
+                    class="portfolio-image zoomable"
+                    loading="lazy"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             หน้า 9
+             ========================= -->
+        <section class="portfolio-page" id="page-9">
+
+            <div class="page-heading">
+
+                <span>09</span>
+
+                <div>
+                    <h2>เกียรติบัตรและผลงาน</h2>
+                    <p>
+                        Certificates & Achievements • ชุดที่ 1
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="page-card">
+
+                <img
+                    src="images/page09.png"
+                    alt="เกียรติบัตรและผลงาน ชุดที่ 1"
+                    class="portfolio-image zoomable"
+                    loading="lazy"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             หน้า 10
+             ========================= -->
+        <section class="portfolio-page" id="page-10">
+
+            <div class="page-heading">
+
+                <span>10</span>
+
+                <div>
+                    <h2>เกียรติบัตรและผลงาน</h2>
+                    <p>
+                        Certificates & Achievements • ชุดที่ 2
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="page-card">
+
+                <img
+                    src="images/page10.png"
+                    alt="เกียรติบัตรและผลงาน ชุดที่ 2"
+                    class="portfolio-image zoomable"
+                    loading="lazy"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             หน้า 11
+             ========================= -->
+        <section class="portfolio-page" id="page-11">
+
+            <div class="page-heading">
+
+                <span>11</span>
+
+                <div>
+                    <h2>เกียรติบัตรและผลงาน</h2>
+                    <p>
+                        Certificates & Achievements • ชุดที่ 3
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="page-card">
+
+                <img
+                    src="images/page11.png"
+                    alt="เกียรติบัตรและผลงาน ชุดที่ 3"
+                    class="portfolio-image zoomable"
+                    loading="lazy"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             หน้า 12
+             ========================= -->
+        <section class="portfolio-page" id="page-12">
+
+            <div class="page-heading">
+
+                <span>12</span>
+
+                <div>
+                    <h2>ปกหลัง</h2>
+                    <p>Thank You</p>
+                </div>
+
+            </div>
+
+            <div class="page-card">
+
+                <img
+                    src="images/page12.png"
+                    alt="ปกหลัง Portfolio Thank You"
+                    class="portfolio-image zoomable"
+                    loading="lazy"
+                >
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         ปุ่มกลับขึ้นบน
+         ========================= -->
+    <a
+        class="back-top"
+        href="#page-1"
+        aria-label="กลับไปด้านบน"
+    >
+        ↑
+    </a>
+
+
+    <!-- =========================
+         หน้าต่างดูรูปใหญ่
+         ========================= -->
+    <div
+        class="lightbox"
+        id="lightbox"
+        aria-hidden="true"
+    >
+
+        <button
+            class="lightbox-close"
+            id="closeLightbox"
+            aria-label="ปิด"
+        >
+            ×
+        </button>
+
+        <img
+            id="lightboxImage"
+            src=""
+            alt="ดู Portfolio ขนาดใหญ่"
+        >
+
+        <p>
+            คลิกที่พื้นหลัง หรือกด ESC เพื่อปิด
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
     <footer>
-        <p>© 2026 My Website | GitHub Pages</p>
+
+        <div class="footer-name">
+            วิภาดา แสงจันทร์
+        </div>
+
+        <div>
+            PORTFOLIO • LOGISTICS MANAGEMENT
+        </div>
+
+        <div class="footer-line"></div>
+
+        <div>
+            © 2026 Portfolio
+        </div>
+
     </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+    <script>
+
+        const lightbox =
+            document.getElementById("lightbox");
+
+        const lightboxImage =
+            document.getElementById("lightboxImage");
+
+        const closeLightbox =
+            document.getElementById("closeLightbox");
+
+
+        // คลิกรูปเพื่อเปิดเต็มจอ
+        document
+            .querySelectorAll(".zoomable")
+            .forEach((image) => {
+
+                image.addEventListener("click", () => {
+
+                    lightboxImage.src = image.src;
+
+                    lightboxImage.alt = image.alt;
+
+                    lightbox.classList.add("active");
+
+                    lightbox.setAttribute(
+                        "aria-hidden",
+                        "false"
+                    );
+
+                    document.body.classList.add(
+                        "no-scroll"
+                    );
+
+                });
+
+            });
+
+
+        // ฟังก์ชันปิดรูป
+        function closeViewer() {
+
+            lightbox.classList.remove("active");
+
+            lightbox.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            document.body.classList.remove(
+                "no-scroll"
+            );
+
+        }
+
+
+        // ปุ่ม X
+        closeLightbox.addEventListener(
+            "click",
+            closeViewer
+        );
+
+
+        // คลิกพื้นหลังเพื่อปิด
+        lightbox.addEventListener(
+            "click",
+            (event) => {
+
+                if (event.target === lightbox) {
+                    closeViewer();
+                }
+
+            }
+        );
+
+
+        // กด ESC เพื่อปิด
+        document.addEventListener(
+            "keydown",
+            (event) => {
+
+                if (event.key === "Escape") {
+                    closeViewer();
+                }
+
+            }
+        );
+
+    </script>
 
 </body>
 </html>

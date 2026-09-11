@@ -35,7 +35,89 @@ document.querySelectorAll(".nav-menu a").forEach(function (link) {
 const pages = document.querySelectorAll(".portfolio-page");
 const menuLinks = document.querySelectorAll(".nav-menu a");
 
+/* =====================================================
+   7. PORTFOLIO PAGE NAVIGATION
+   ===================================================== */
 
+pages.forEach(function (page, index) {
+
+    const navigation = document.createElement("div");
+
+    navigation.className = "portfolio-navigation";
+
+    navigation.innerHTML = `
+        <button
+            class="portfolio-nav-btn prev-page"
+            type="button"
+        >
+            <span>←</span>
+            ก่อนหน้า
+        </button>
+
+        <div class="portfolio-counter">
+            <strong>${String(index + 1).padStart(2, "0")}</strong>
+            <span>/</span>
+            <span>12</span>
+        </div>
+
+        <button
+            class="portfolio-nav-btn next-page"
+            type="button"
+        >
+            ถัดไป
+            <span>→</span>
+        </button>
+    `;
+
+    page.appendChild(navigation);
+
+
+    /* ---------- ปุ่มก่อนหน้า ---------- */
+
+    const prevButton =
+        navigation.querySelector(".prev-page");
+
+    if (index === 0) {
+
+        prevButton.disabled = true;
+
+    } else {
+
+        prevButton.addEventListener("click", function () {
+
+            pages[index - 1].scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        });
+
+    }
+
+
+    /* ---------- ปุ่มถัดไป ---------- */
+
+    const nextButton =
+        navigation.querySelector(".next-page");
+
+    if (index === pages.length - 1) {
+
+        nextButton.disabled = true;
+
+    } else {
+
+        nextButton.addEventListener("click", function () {
+
+            pages[index + 1].scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        });
+
+    }
+
+});
 const observer = new IntersectionObserver(
 
     function (entries) {

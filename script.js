@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       2. SMOOTH SCROLL — เมนูด้านบน
+       2. SMOOTH SCROLL
        ===================================================== */
 
     menuLinks.forEach(function (link) {
@@ -26,10 +26,12 @@ document.addEventListener("DOMContentLoaded", function () {
             const target = document.querySelector(targetId);
 
             if (target) {
+
                 target.scrollIntoView({
                     behavior: "smooth",
                     block: "start"
                 });
+
             }
 
         });
@@ -38,44 +40,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       3. ACTIVE MENU — ไฮไลต์หน้าปัจจุบัน
+       3. ACTIVE MENU
        ===================================================== */
 
-    const pageObserver = new IntersectionObserver(
-        function (entries) {
+    const activePageObserver =
+        new IntersectionObserver(
+            function (entries) {
 
-            entries.forEach(function (entry) {
+                entries.forEach(function (entry) {
 
-                if (entry.isIntersecting) {
+                    if (entry.isIntersecting) {
 
-                    const currentPage = entry.target.id;
+                        const currentPage =
+                            entry.target.id;
 
-                    menuLinks.forEach(function (link) {
+                        menuLinks.forEach(function (link) {
 
-                        link.classList.remove("active");
+                            link.classList.remove("active");
 
-                        if (
-                            link.getAttribute("href") ===
-                            "#" + currentPage
-                        ) {
-                            link.classList.add("active");
-                        }
+                            if (
+                                link.getAttribute("href") ===
+                                "#" + currentPage
+                            ) {
 
-                    });
+                                link.classList.add("active");
 
-                }
+                            }
 
-            });
+                        });
 
-        },
-        {
-            threshold: 0.35
-        }
-    );
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.35
+            }
+        );
 
 
     pages.forEach(function (page) {
-        pageObserver.observe(page);
+
+        activePageObserver.observe(page);
+
     });
 
 
@@ -83,28 +91,29 @@ document.addEventListener("DOMContentLoaded", function () {
        4. SCROLL ANIMATION
        ===================================================== */
 
-    const animationObserver = new IntersectionObserver(
-        function (entries) {
+    const animationObserver =
+        new IntersectionObserver(
+            function (entries) {
 
-            entries.forEach(function (entry) {
+                entries.forEach(function (entry) {
 
-                if (entry.isIntersecting) {
+                    if (entry.isIntersecting) {
 
-                    entry.target.classList.add("show");
+                        entry.target.classList.add("show");
 
-                    animationObserver.unobserve(
-                        entry.target
-                    );
+                        animationObserver.unobserve(
+                            entry.target
+                        );
 
-                }
+                    }
 
-            });
+                });
 
-        },
-        {
-            threshold: 0.15
-        }
-    );
+            },
+            {
+                threshold: 0.15
+            }
+        );
 
 
     document
@@ -121,12 +130,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       5. BACK TO TOP — ปุ่มกลับด้านบน
+       5. BACK TO TOP
        ===================================================== */
 
-    const backToTop = document.createElement("button");
+    const backToTop =
+        document.createElement("button");
 
-    backToTop.className = "back-to-top";
+    backToTop.className =
+        "back-to-top";
+
     backToTop.innerHTML = "↑";
 
     backToTop.setAttribute(
@@ -137,33 +149,39 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(backToTop);
 
 
-    window.addEventListener("scroll", function () {
+    window.addEventListener(
+        "scroll",
+        function () {
 
-        if (window.scrollY > 500) {
+            if (window.scrollY > 500) {
 
-            backToTop.classList.add("show");
+                backToTop.classList.add("show");
 
-        } else {
+            } else {
 
-            backToTop.classList.remove("show");
+                backToTop.classList.remove("show");
+
+            }
 
         }
+    );
 
-    });
 
+    backToTop.addEventListener(
+        "click",
+        function () {
 
-    backToTop.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    });
+        }
+    );
 
 
     /* =====================================================
-       6. IMAGE VIEWER — กดรูปเพื่อขยาย
+       6. IMAGE VIEWER / ZOOM
        ===================================================== */
 
     const images =
@@ -175,14 +193,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const imageViewer =
         document.createElement("div");
 
-    imageViewer.className = "image-viewer";
+    imageViewer.className =
+        "image-viewer";
 
 
     imageViewer.innerHTML = `
         <button
             class="viewer-close"
-            aria-label="ปิด"
             type="button"
+            aria-label="ปิด"
         >
             ×
         </button>
@@ -208,26 +227,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
     images.forEach(function (image) {
 
-        image.addEventListener("click", function () {
+        image.addEventListener(
+            "click",
+            function () {
 
-            viewerImage.src = this.src;
-            viewerImage.alt = this.alt;
+                viewerImage.src =
+                    this.src;
 
-            imageViewer.classList.add("open");
+                viewerImage.alt =
+                    this.alt;
 
-            document.body.style.overflow =
-                "hidden";
+                imageViewer.classList.add(
+                    "open"
+                );
 
-        });
+                document.body.style.overflow =
+                    "hidden";
+
+            }
+        );
 
     });
 
 
     function closeImageViewer() {
 
-        imageViewer.classList.remove("open");
+        imageViewer.classList.remove(
+            "open"
+        );
 
-        document.body.style.overflow = "";
+        document.body.style.overflow =
+            "";
 
     }
 
@@ -245,7 +275,9 @@ document.addEventListener("DOMContentLoaded", function () {
             if (
                 event.target === imageViewer
             ) {
+
                 closeImageViewer();
+
             }
 
         }
@@ -257,7 +289,9 @@ document.addEventListener("DOMContentLoaded", function () {
         function (event) {
 
             if (event.key === "Escape") {
+
                 closeImageViewer();
+
             }
 
         }
@@ -265,25 +299,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       7. BEFORE / NEXT PAGE
+       7. PORTFOLIO PAGE NAVIGATION
        ===================================================== */
 
     /*
-       ป้องกันการสร้างปุ่มซ้ำ
-       หากมี navigation อยู่แล้ว จะไม่สร้างเพิ่ม
+       สำคัญ:
+       ลบ Navigation เดิมทั้งหมดก่อน
+       เพื่อป้องกันปุ่ม ก่อนหน้า / ถัดไป ซ้ำ
+    */
+
+    document
+        .querySelectorAll(
+            ".portfolio-navigation"
+        )
+        .forEach(function (navigation) {
+
+            navigation.remove();
+
+        });
+
+
+    /*
+       สร้าง Navigation ใหม่
+       1 ชุดต่อ 1 หน้าเท่านั้น
     */
 
     pages.forEach(function (page, index) {
-
-        /* ถ้ามีปุ่มอยู่แล้ว ไม่สร้างซ้ำ */
-        if (
-            page.querySelector(
-                ".portfolio-navigation"
-            )
-        ) {
-            return;
-        }
-
 
         const navigation =
             document.createElement("div");
@@ -302,6 +343,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </button>
 
             <div class="portfolio-counter">
+
                 <strong>
                     ${String(index + 1).padStart(2, "0")}
                 </strong>
@@ -311,6 +353,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <span>
                     ${String(pages.length).padStart(2, "0")}
                 </span>
+
             </div>
 
             <button
@@ -326,7 +369,7 @@ document.addEventListener("DOMContentLoaded", function () {
         page.appendChild(navigation);
 
 
-        /* ---------- ปุ่มก่อนหน้า ---------- */
+        /* ---------- ก่อนหน้า ---------- */
 
         const prevButton =
             navigation.querySelector(
@@ -355,7 +398,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* ---------- ปุ่มถัดไป ---------- */
+        /* ---------- ถัดไป ---------- */
 
         const nextButton =
             navigation.querySelector(
@@ -389,7 +432,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       8. PORTFOLIO PROGRESS BAR
+       8. PROGRESS BAR
        ===================================================== */
 
     const progressBar =
@@ -421,9 +464,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                                 const progress =
                                     (
-                                        (
-                                            pageIndex + 1
-                                        ) /
+                                        (pageIndex + 1) /
                                         pages.length
                                     ) * 100;
 

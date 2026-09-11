@@ -1235,3 +1235,159 @@ footer small {
         font-size: 18px;
     }
 }
+/* =====================================================
+   PORTFOLIO PAGE NAVIGATION
+   ===================================================== */
+
+.portfolio-navigation {
+    width: min(1080px, 100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 25px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid var(--border);
+}
+
+
+/* ---------- ปุ่ม ---------- */
+
+.portfolio-nav-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-width: 125px;
+
+    padding: 10px 18px;
+
+    color: var(--navy);
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 30px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.portfolio-nav-btn span {
+    color: var(--gold);
+
+    font-size: 17px;
+
+    transition: transform 0.25s ease;
+}
+
+
+/* Hover */
+
+.portfolio-nav-btn:hover:not(:disabled) {
+    color: var(--white);
+
+    background: var(--navy);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(16, 27, 85, 0.15);
+}
+
+.portfolio-nav-btn:hover:not(:disabled) span {
+    color: var(--gold-light);
+}
+
+
+/* ---------- Disabled ---------- */
+
+.portfolio-nav-btn:disabled {
+    opacity: 0.35;
+
+    cursor: not-allowed;
+}
+
+
+/* ---------- Counter ---------- */
+
+.portfolio-counter {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 7px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+.portfolio-counter strong {
+    color: var(--navy);
+
+    font-size: 22px;
+
+    font-weight: 900;
+}
+
+.portfolio-counter span:last-child {
+    color: rgba(109, 117, 144, 0.7);
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   MOBILE PAGE NAVIGATION
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .portfolio-navigation {
+        margin-top: 18px;
+
+        padding-top: 15px;
+    }
+
+    .portfolio-nav-btn {
+        min-width: auto;
+
+        padding: 9px 13px;
+
+        font-size: 10px;
+    }
+
+    .portfolio-nav-btn span {
+        font-size: 15px;
+    }
+
+    .portfolio-counter {
+        gap: 4px;
+
+        font-size: 10px;
+    }
+
+    .portfolio-counter strong {
+        font-size: 18px;
+    }
+}

@@ -1,3 +1,31 @@
+/* =====================================================
+   PORTWIPHADA — STYLE.CSS
+   Minimal Portfolio
+   ===================================================== */
+
+/* ---------- สีหลัก ---------- */
+
+:root {
+    --navy: #101b55;
+    --navy-light: #182873;
+    --blue: #3155b8;
+
+    --gold: #dca83b;
+    --gold-light: #f1cf82;
+
+    --white: #ffffff;
+    --cream: #f8f8f5;
+    --background: #eef2f8;
+
+    --text: #182044;
+    --muted: #6d7590;
+
+    --shadow: 0 15px 45px rgba(16, 27, 85, 0.14);
+}
+
+
+/* ---------- พื้นฐาน ---------- */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,308 +34,684 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 85px;
 }
 
 body {
-    font-family: Arial, "Noto Sans Thai", sans-serif;
-    background: #f8f9fc;
-    color: #333;
+    font-family:
+        "Noto Sans Thai",
+        "Leelawadee UI",
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    background: var(--background);
+    color: var(--text);
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 6%;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid rgba(16, 27, 85, 0.08);
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* Logo */
+
+.logo {
+    color: var(--navy);
+
+    text-decoration: none;
+
+    font-size: 19px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--gold);
 }
 
 
 /* เมนู */
 
-header {
-    width: 100%;
-    background: white;
-    padding: 18px 8%;
-
+.nav-menu {
     display: flex;
-    justify-content: space-between;
+
     align-items: center;
 
-    position: sticky;
-    top: 0;
+    gap: 8px;
 
-    z-index: 1000;
+    overflow-x: auto;
 
-    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    scrollbar-width: none;
 }
 
-.logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: #5c65d8;
+.nav-menu::-webkit-scrollbar {
+    display: none;
 }
 
-nav a {
-    text-decoration: none;
-    color: #333;
-
-    margin-left: 25px;
-
-    font-size: 15px;
-}
-
-nav a:hover {
-    color: #5c65d8;
-}
-
-
-/* หน้าแรก */
-
-.hero {
-    min-height: 90vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    gap: 70px;
-
-    padding: 70px 10%;
-
-    background:
-        linear-gradient(
-            135deg,
-            #eef0ff,
-            #ffffff
-        );
-}
-
-.hero-text {
-    max-width: 550px;
-}
-
-.hero-text h1 {
-    font-size: 48px;
-    color: #363a70;
-
-    margin-bottom: 20px;
-}
-
-.hero-text p {
-    font-size: 18px;
-    line-height: 1.8;
-
-    margin-bottom: 30px;
-
-    color: #666;
-}
-
-.button {
-    display: inline-block;
-
-    background: #5c65d8;
-    color: white;
-
-    text-decoration: none;
-
-    padding: 14px 30px;
-
-    border-radius: 30px;
-
-    transition: 0.3s;
-}
-
-.button:hover {
-    transform: translateY(-3px);
-    background: #454ebc;
-}
-
-.hero-image img {
-    width: 350px;
-    height: 430px;
-
-    object-fit: cover;
-
-    border-radius: 30px;
-
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
-
-/* เกี่ยวกับฉัน */
-
-.about {
-    padding: 90px 10%;
-    background: white;
-}
-
-.about h2,
-.gallery h2,
-.contact h2 {
-    text-align: center;
-
-    font-size: 35px;
-
-    margin-bottom: 50px;
-
-    color: #363a70;
-}
-
-.about-container {
+.nav-menu a {
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    gap: 60px;
-}
+    min-width: 38px;
+    height: 34px;
 
-.about-container img {
-    width: 320px;
-    height: 320px;
+    padding: 0 9px;
 
-    object-fit: cover;
+    color: var(--navy);
 
-    border-radius: 25px;
-}
+    text-decoration: none;
 
-.about-text {
-    max-width: 550px;
-}
-
-.about-text h3 {
-    font-size: 27px;
-
-    margin-bottom: 20px;
-}
-
-.about-text p {
-    line-height: 1.9;
-
-    color: #666;
-
-    margin-bottom: 15px;
-}
-
-
-/* Gallery */
-
-.gallery {
-    padding: 90px 8%;
-}
-
-.gallery-container {
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(250px, 1fr));
-
-    gap: 30px;
-}
-
-.card {
-    background: white;
+    font-size: 12px;
+    font-weight: 700;
 
     border-radius: 20px;
 
+    transition: all 0.25s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--white);
+
+    background: var(--navy);
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero {
+    min-height: 92vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    padding: 80px 6%;
+
     overflow: hidden;
 
-    box-shadow:
-        0 8px 30px rgba(0,0,0,0.08);
-
-    transition: 0.3s;
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(220, 168, 59, 0.16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(49, 85, 184, 0.12),
+            transparent 30%
+        ),
+        var(--white);
 }
 
-.card:hover {
-    transform: translateY(-8px);
+
+/* เส้นตกแต่ง */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    border: 1px solid rgba(220, 168, 59, 0.25);
+
+    border-radius: 50%;
+
+    right: -160px;
+    top: -120px;
 }
 
-.card img {
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border: 1px solid rgba(16, 27, 85, 0.1);
+
+    border-radius: 50%;
+
+    left: -80px;
+    bottom: -70px;
+}
+
+
+.hero-content {
     width: 100%;
-    height: 250px;
+    max-width: 1000px;
 
-    object-fit: cover;
-}
+    position: relative;
+    z-index: 2;
 
-.card-text {
-    padding: 20px;
-}
-
-.card-text h3 {
-    color: #4d55c5;
-
-    margin-bottom: 10px;
-}
-
-.card-text p {
-    color: #666;
-
-    line-height: 1.7;
-}
-
-
-/* Contact */
-
-.contact {
     text-align: center;
-
-    padding: 80px 20px;
-
-    background: white;
-}
-
-.contact p {
-    margin: 15px;
-
-    font-size: 18px;
 }
 
 
-/* Footer */
+/* เลข */
+
+.hero-number {
+    margin-bottom: 15px;
+
+    color: var(--gold);
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+
+/* PORTFOLIO */
+
+.hero h1 {
+    color: var(--navy);
+
+    font-size: clamp(55px, 10vw, 120px);
+
+    font-weight: 900;
+
+    letter-spacing: 7px;
+
+    line-height: 1;
+
+    margin-bottom: 22px;
+}
+
+
+/* เส้น */
+
+.hero-line {
+    width: 80px;
+    height: 3px;
+
+    margin: 0 auto 25px;
+
+    background: var(--gold);
+}
+
+
+/* ชื่อ */
+
+.hero h2 {
+    color: var(--navy);
+
+    font-size: clamp(25px, 4vw, 42px);
+
+    font-weight: 700;
+
+    margin-bottom: 16px;
+}
+
+
+/* รายละเอียด */
+
+.hero-description {
+    color: var(--muted);
+
+    font-size: 16px;
+
+    line-height: 2;
+
+    margin-bottom: 32px;
+}
+
+
+/* ปุ่ม */
+
+.start-button {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 18px;
+
+    padding: 13px 25px;
+
+    color: var(--white);
+
+    background: var(--navy);
+
+    border: 1px solid var(--navy);
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    transition: all 0.3s ease;
+}
+
+.start-button span {
+    color: var(--gold-light);
+
+    font-size: 17px;
+}
+
+.start-button:hover {
+    color: var(--navy);
+
+    background: var(--white);
+
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow);
+}
+
+
+/* =====================================================
+   PORTFOLIO PAGE
+   ===================================================== */
+
+.portfolio-page {
+    min-height: 100vh;
+
+    padding: 110px 6%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    scroll-margin-top: 80px;
+}
+
+
+/* สลับพื้นหลัง */
+
+.portfolio-page:nth-child(even) {
+    background: var(--white);
+}
+
+
+/* =====================================================
+   PAGE NUMBER
+   ===================================================== */
+
+.page-number {
+    position: absolute;
+
+    left: 5%;
+
+    top: 90px;
+
+    color: rgba(16, 27, 85, 0.08);
+
+    font-size: clamp(70px, 10vw, 130px);
+
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+
+/* =====================================================
+   PAGE TITLE
+   ===================================================== */
+
+.page-title {
+    width: min(1060px, 100%);
+
+    margin-bottom: 28px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.page-title span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--gold);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.page-title h2 {
+    color: var(--navy);
+
+    font-size: clamp(20px, 3vw, 30px);
+
+    font-weight: 800;
+
+    line-height: 1.4;
+}
+
+
+/* =====================================================
+   PORTFOLIO IMAGE
+   ===================================================== */
+
+.portfolio-frame {
+    width: min(1060px, 100%);
+
+    position: relative;
+
+    padding: 10px;
+
+    background: var(--white);
+
+    border: 1px solid rgba(16, 27, 85, 0.08);
+
+    box-shadow: var(--shadow);
+
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+
+.portfolio-frame::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 5px;
+    height: 100%;
+
+    background: var(--gold);
+
+    z-index: 2;
+}
+
+
+.portfolio-frame img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border-radius: 3px;
+
+    transition: transform 0.4s ease;
+}
+
+
+/* ซูมเล็กน้อยเมื่อเอาเมาส์ไปวาง */
+
+.portfolio-frame:hover img {
+    transform: scale(1.008);
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
 
 footer {
-    background: #363a70;
-
-    color: white;
+    padding: 70px 20px;
 
     text-align: center;
 
-    padding: 25px;
+    color: var(--white);
+
+    background: var(--navy);
 }
 
 
-/* มือถือ */
+.footer-line {
+    width: 50px;
+    height: 2px;
 
-@media (max-width: 800px) {
+    margin: 0 auto 25px;
 
-    header {
-        flex-direction: column;
-        gap: 15px;
+    background: var(--gold);
+}
+
+
+footer p {
+    margin-bottom: 8px;
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+
+footer h3 {
+    margin-bottom: 5px;
+
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+
+footer small {
+    color: rgba(255, 255, 255, 0.6);
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =====================================================
+   RESPONSIVE — TABLET
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 15px 4%;
     }
 
-    nav a {
-        margin: 0 8px;
-        font-size: 13px;
+    .logo {
+        font-size: 16px;
+    }
+
+    .nav-menu {
+        gap: 3px;
+    }
+
+    .nav-menu a {
+        min-width: 34px;
+        padding: 0 7px;
+        font-size: 11px;
+    }
+
+    .portfolio-page {
+        padding: 90px 4%;
+    }
+
+    .page-number {
+        left: 4%;
+        top: 65px;
+    }
+
+    .page-title {
+        margin-bottom: 20px;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE — MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        display: block;
+
+        padding: 12px 15px;
+    }
+
+    .logo {
+        display: block;
+
+        margin-bottom: 8px;
+
+        text-align: center;
+    }
+
+    .nav-menu {
+        justify-content: flex-start;
+    }
+
+    .nav-menu a {
+        min-width: 32px;
+        height: 30px;
+
+        font-size: 10px;
+    }
+
+
+    .hero {
+        min-height: 85vh;
+
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        letter-spacing: 4px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+
+    .portfolio-page {
+        min-height: auto;
+
+        padding: 75px 15px;
+    }
+
+    .page-number {
+        position: relative;
+
+        left: auto;
+        top: auto;
+
+        width: 100%;
+
+        margin-bottom: -35px;
+
+        font-size: 70px;
+
+        text-align: left;
+    }
+
+    .page-title {
+        margin-bottom: 18px;
+    }
+
+    .page-title h2 {
+        font-size: 20px;
+    }
+
+
+    .portfolio-frame {
+        padding: 5px;
+
+        border-radius: 5px;
+    }
+
+
+    footer {
+        padding: 55px 15px;
+    }
+
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+a:focus-visible {
+    outline: 3px solid var(--gold);
+
+    outline-offset: 4px;
+}
+
+
+/* =====================================================
+   PRINT
+   ===================================================== */
+
+@media print {
+
+    .navbar,
+    .start-button {
+        display: none;
     }
 
     .hero {
-        flex-direction: column;
+        min-height: auto;
 
-        text-align: center;
-
-        padding-top: 60px;
+        padding: 40px 20px;
     }
 
-    .hero-text h1 {
-        font-size: 35px;
+    .portfolio-page {
+        min-height: auto;
+
+        padding: 20px;
+        page-break-after: always;
     }
 
-    .hero-image img {
-        width: 280px;
-        height: 350px;
+    .portfolio-frame {
+        box-shadow: none;
     }
 
-    .about-container {
-        flex-direction: column;
-
-        text-align: center;
-    }
-
-    .about-container img {
-        width: 260px;
-        height: 260px;
-    }
 }

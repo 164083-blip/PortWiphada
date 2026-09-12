@@ -845,17 +845,307 @@ footer small {
 
 @media (max-width: 600px) {
 
+    /* =========================
+       MOBILE NAVBAR
+    ========================= */
+
     .navbar {
         height: 62px;
+        padding: 0 14px;
+
+        gap: 12px;
     }
 
     .logo {
-        font-size: 16px;
+        flex-shrink: 0;
+
+        font-size: 15px;
+        letter-spacing: 2.5px;
+
+        margin-right: 5px;
+    }
+
+    .nav-menu {
+        flex: 1;
+
+        display: flex;
+        align-items: center;
+
+        gap: 2px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        white-space: nowrap;
+
+        scrollbar-width: none;
+
+        -webkit-overflow-scrolling: touch;
+
+        mask-image: linear-gradient(
+            to right,
+            transparent 0,
+            black 8px,
+            black calc(100% - 8px),
+            transparent 100%
+        );
+    }
+
+    .nav-menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-menu a {
+        flex-shrink: 0;
+
+        padding: 8px 10px;
+
+        font-size: 11px;
+
+        color: rgba(255, 255, 255, 0.65);
+    }
+
+    .nav-menu a.active {
+        color: white;
+    }
+
+    /* =========================
+       MOBILE HERO
+    ========================= */
+
+    .hero {
+        min-height: auto;
+
+        padding: 105px 20px 65px;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+
+        gap: 55px;
+    }
+
+    .hero-number {
+        font-size: 10px;
 
         letter-spacing: 3px;
 
-        margin-right: 15px;
+        margin-bottom: 20px;
     }
+
+    .hero h1 {
+        font-size: clamp(68px, 20vw, 90px);
+
+        line-height: 0.8;
+
+        letter-spacing: -4px;
+
+        margin-bottom: 30px;
+    }
+
+    .hero h2 {
+        font-size: 26px;
+
+        line-height: 1.4;
+    }
+
+    .hero-description {
+        font-size: 13px;
+
+        line-height: 1.9;
+
+        margin-bottom: 28px;
+    }
+
+    .start-button {
+        padding: 12px 18px;
+
+        font-size: 10px;
+
+        letter-spacing: 1.5px;
+    }
+
+    .hero-cover {
+        width: 90%;
+
+        margin: 0 auto;
+    }
+
+    .hero-cover-card {
+        width: 100%;
+
+        padding: 8px;
+    }
+
+    .hero-cover-label {
+        right: -8px;
+        bottom: -14px;
+
+        padding: 9px 11px;
+
+        font-size: 7px;
+
+        letter-spacing: 1px;
+    }
+
+    /* =========================
+       MOBILE PORTFOLIO
+    ========================= */
+
+    .portfolio-page {
+        min-height: auto;
+
+        padding: 90px 12px 55px;
+
+        scroll-margin-top: 62px;
+    }
+
+    .page-number {
+        top: 78px;
+        right: 15px;
+
+        font-size: 80px;
+    }
+
+    .page-title {
+        margin-bottom: 20px;
+
+        padding-right: 55px;
+    }
+
+    .page-title span {
+        font-size: 9px;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 7px;
+    }
+
+    .page-title h2 {
+        font-size: 21px;
+
+        line-height: 1.45;
+    }
+
+    .page-title::after {
+        width: 35px;
+
+        margin-top: 12px;
+    }
+
+    /* =========================
+       PORTFOLIO IMAGE
+    ========================= */
+
+    .portfolio-frame {
+        width: 100%;
+
+        padding: 5px;
+
+        border-radius: 2px;
+
+        box-shadow:
+            0 12px 35px rgba(16, 26, 45, 0.10);
+    }
+
+    .portfolio-frame:hover {
+        transform: none;
+
+        box-shadow:
+            0 12px 35px rgba(16, 26, 45, 0.10);
+    }
+
+    /* =========================
+       PREV / NEXT
+    ========================= */
+
+    .portfolio-navigation {
+        margin-top: 22px;
+
+        padding: 0 3px;
+    }
+
+    .portfolio-nav-btn {
+        font-size: 10px;
+
+        gap: 6px;
+    }
+
+    .portfolio-nav-btn span {
+        font-size: 16px;
+    }
+
+    .portfolio-counter {
+        gap: 5px;
+
+        font-size: 10px;
+    }
+
+    .portfolio-counter strong {
+        font-size: 15px;
+    }
+
+    /* =========================
+       IMAGE VIEWER
+    ========================= */
+
+    .image-viewer {
+        padding: 15px;
+    }
+
+    .image-viewer img {
+        max-width: 96vw;
+        max-height: 88vh;
+    }
+
+    .viewer-close {
+        top: 15px;
+        right: 15px;
+
+        width: 40px;
+        height: 40px;
+
+        font-size: 24px;
+    }
+
+    /* =========================
+       BACK TO TOP
+    ========================= */
+
+    .back-to-top {
+        right: 14px;
+        bottom: 14px;
+
+        width: 40px;
+        height: 40px;
+
+        font-size: 18px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        padding: 60px 20px 40px;
+    }
+
+    footer p {
+        font-size: 9px;
+
+        letter-spacing: 2px;
+    }
+
+    footer h3 {
+        font-size: 24px;
+    }
+
+    footer small {
+        font-size: 9px;
+    }
+
+}
 
     .nav-menu {
         gap: 2px;

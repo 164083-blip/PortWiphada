@@ -651,5 +651,14 @@ footer {
     flex-direction: column;
     text-align: center;
   }
+.hidden {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.7s ease;
+}
 
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 }

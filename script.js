@@ -1,199 +1,97 @@
-/* =====================================================
-   WIPHADA PORTFOLIO
-   JAVASCRIPT
-===================================================== */
+document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener("DOMContentLoaded", () => {
+    /* ================= MENU ================= */
 
-    /* ================= MOBILE MENU ================= */
+    const menuBtn = document.getElementById("menuBtn");
+    const navMenu = document.getElementById("navMenu");
 
-    const menuToggle =
-        document.querySelector(".menu-toggle");
+    menuBtn.addEventListener("click", function () {
 
-    const navLinks =
-        document.querySelector(".nav-links");
+        navMenu.classList.toggle("active");
 
-    if (menuToggle && navLinks) {
+        if (navMenu.classList.contains("active")) {
+            menuBtn.textContent = "✕";
+        } else {
+            menuBtn.textContent = "☰";
+        }
 
-        menuToggle.addEventListener("click", () => {
+    });
 
-            navLinks.classList.toggle("active");
 
-            const isOpen =
-                navLinks.classList.contains("active");
+    /* ================= CLOSE MENU ================= */
 
-            menuToggle.textContent =
-                isOpen ? "✕" : "☰";
+    const navLinks = document.querySelectorAll(".nav-menu a");
+
+    navLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navMenu.classList.remove("active");
+
+            menuBtn.textContent = "☰";
 
         });
 
-
-        document.querySelectorAll(".nav-links a")
-            .forEach(link => {
-
-                link.addEventListener("click", () => {
-
-                    navLinks.classList.remove("active");
-
-                    menuToggle.textContent = "☰";
-
-                });
-
-            });
-
-    }
+    });
 
 
-    /* ================= SCROLL REVEAL ================= */
+    /* ================= SCROLL EFFECT ================= */
 
-    const revealElements =
-        document.querySelectorAll(".reveal");
+    window.addEventListener("scroll", function () {
 
-    const revealObserver =
-        new IntersectionObserver(
-            (entries, observer) => {
+        const navbar =
+            document.querySelector(".navbar");
 
-                entries.forEach(entry => {
+        if (window.scrollY > 50) {
 
-                    if (entry.isIntersecting) {
+            navbar.style.boxShadow =
+                "0 10px 35px rgba(103,16,29,.09)";
 
-                        entry.target.classList.add("show");
+        } else {
 
-                        observer.unobserve(entry.target);
+            navbar.style.boxShadow =
+                "0 8px 30px rgba(70,20,30,.04)";
 
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.12
-            }
-        );
-
-
-    revealElements.forEach(element => {
-
-        revealObserver.observe(element);
+        }
 
     });
 
 
-    /* ================= ACTIVE NAV ================= */
+    /* ================= IMAGE CHECK ================= */
 
-    const sections =
-        document.querySelectorAll("section[id]");
+    const images =
+        document.querySelectorAll("img");
 
-    const navItems =
-        document.querySelectorAll(".nav-links a");
+    images.forEach(function (img) {
 
-    const activeObserver =
-        new IntersectionObserver(
-            (entries) => {
+        img.addEventListener("error", function () {
 
-                entries.forEach(entry => {
+            console.warn(
+                "ไม่พบรูป:",
+                img.getAttribute("src")
+            );
 
-                    if (entry.isIntersecting) {
-
-                        const id =
-                            entry.target.getAttribute("id");
-
-                        navItems.forEach(link => {
-
-                            link.classList.remove("active");
-
-                            if (
-                                link.getAttribute("href") ===
-                                "#" + id
-                            ) {
-
-                                link.classList.add("active");
-
-                            }
-
-                        });
-
-                    }
-
-                });
-
-            },
-            {
-                rootMargin:
-                    "-30% 0px -60% 0px"
-            }
-        );
-
-
-    sections.forEach(section => {
-
-        activeObserver.observe(section);
+        });
 
     });
 
 
-    /* ================= SMOOTH SCROLL ================= */
+    /* ================= TOP BUTTON ================= */
 
-    document.querySelectorAll('a[href^="#"]')
-        .forEach(link => {
+    document.querySelectorAll('a[href="#top"]')
+        .forEach(function (button) {
 
-            link.addEventListener("click", function (event) {
-
-                const targetId =
-                    this.getAttribute("href");
-
-                const target =
-                    document.querySelector(targetId);
-
-                if (!target) return;
+            button.addEventListener("click", function (event) {
 
                 event.preventDefault();
 
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
                 });
 
             });
 
         });
-
-
-    /* ================= IMAGE FALLBACK ================= */
-
-    document.querySelectorAll("img")
-        .forEach(img => {
-
-            img.addEventListener("error", () => {
-
-                img.style.background =
-                    "#fff1f3";
-
-                img.style.minHeight =
-                    "200px";
-
-                console.warn(
-                    "ไม่พบรูป:",
-                    img.getAttribute("src")
-                );
-
-            });
-
-        });
-
-
-    /* ================= INITIAL REVEAL ================= */
-
-    setTimeout(() => {
-
-        document
-            .querySelectorAll(".hero .reveal")
-            .forEach(element => {
-
-                element.classList.add("show");
-
-            });
-
-    }, 200);
 
 });

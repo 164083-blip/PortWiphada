@@ -4,89 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="Portfolio ของนางสาววิภาดา แสงจันทร์">
-
-    <title>Portfolio | Wiphada Saengchan</title>
+    <title>Portfolio | วิภาดา แสงจันทร์</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body id="top">
 
 <!-- ================= NAVBAR ================= -->
 
-<header class="navbar" id="top">
+<header class="navbar">
 
-    <a href="#home" class="logo">
+    <a href="#top" class="logo">
         WIPHADA<span>.</span>
     </a>
 
-    <button class="menu-toggle" aria-label="เปิดเมนู">
-        ☰
-    </button>
+    <button class="menu-btn" id="menuBtn">☰</button>
 
-    <nav class="nav-links">
-
-        <a href="#home">หน้าหลัก</a>
-        <a href="#about">ประวัติ</a>
-        <a href="#sop">SOP</a>
-        <a href="#activities">ผลงาน</a>
-        <a href="#certificates">เกียรติบัตร</a>
-        <a href="#contact">ติดต่อ</a>
-
+    <nav class="nav-menu" id="navMenu">
+        <a href="#page-1">หน้าปก</a>
+        <a href="#page-2">SOP</a>
+        <a href="#page-3">ประวัติ</a>
+        <a href="#page-4">ผลการเรียน</a>
+        <a href="#page-5">ธุรกิจ</a>
+        <a href="#page-6">ผู้นำ</a>
+        <a href="#page-7">วิเคราะห์</a>
+        <a href="#page-8">สื่อสาร</a>
+        <a href="#page-9">เกียรติบัตร</a>
+        <a href="#page-12">ปกหลัง</a>
     </nav>
 
 </header>
 
 
-<!-- ================= BACKGROUND ================= -->
-
-<div class="bg-orb orb-1"></div>
-<div class="bg-orb orb-2"></div>
-
-
-<main>
-
 <!-- ================= HERO ================= -->
 
-<section class="hero section" id="home">
+<section class="hero">
 
-    <div class="hero-text reveal">
+    <div class="hero-left">
 
-        <p class="eyebrow">
+        <p class="small-title">
             PORTFOLIO • 2026
         </p>
 
         <h1>
-            <span>นางสาววิภาดา</span>
-            <br>
-            แสงจันทร์
+            WIPHA<br>
+            <span>DA.</span>
         </h1>
 
-        <p class="hero-desc">
-            นักเรียนชั้นมัธยมศึกษาปีที่ 6/1<br>
-            โรงเรียนกระทุ่มแบน “วิเศษสมุทคุณ”
-            <br><br>
-            ผู้มีความสนใจด้านการจัดการโลจิสติกส์
-            การทำงานเป็นทีม การสื่อสาร
-            และการพัฒนาตนเอง
+        <div class="red-line"></div>
+
+        <h2>
+            นางสาววิภาดา แสงจันทร์
+        </h2>
+
+        <p class="hero-text">
+            แฟ้มสะสมผลงานที่รวบรวมประสบการณ์
+            ความสามารถ กิจกรรม และความภาคภูมิใจ
+            ตลอดเส้นทางการเรียนรู้
         </p>
 
         <div class="hero-buttons">
 
-            <a href="#about" class="btn primary">
-                รู้จักฉันมากขึ้น
+            <a href="#page-1" class="btn-main">
+                ดู Portfolio
+                <span>→</span>
             </a>
 
-            <a href="#activities" class="btn ghost">
-                ดูผลงาน
+            <a href="#page-3" class="btn-second">
+                แนะนำตัว
             </a>
 
         </div>
@@ -94,34 +85,24 @@
     </div>
 
 
-    <div class="hero-card reveal">
+    <div class="hero-right">
 
-        <div class="hero-image-wrap">
+        <div class="cover-shadow"></div>
+
+        <div class="cover-card">
 
             <img
                 src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/1.png"
-                alt="หน้าปก Portfolio วิภาดา"
-                class="hero-image"
+                alt="หน้าปก Portfolio"
             >
 
         </div>
 
-        <div class="mini-info">
+        <div class="cover-label">
 
-            <div>
-                <span>ชื่อ</span>
-                <strong>วิภาดา แสงจันทร์</strong>
-            </div>
+            <span>PORTFOLIO</span>
 
-            <div>
-                <span>ระดับชั้น</span>
-                <strong>ม.6/1</strong>
-            </div>
-
-            <div>
-                <span>เป้าหมาย</span>
-                <strong>การจัดการโลจิสติกส์</strong>
-            </div>
+            <span>01 / 12</span>
 
         </div>
 
@@ -130,455 +111,327 @@
 </section>
 
 
-<!-- ================= ABOUT ================= -->
+<!-- ================= INTRO ================= -->
 
-<section class="section about" id="about">
+<section class="intro">
 
-    <div class="section-heading reveal">
+    <div class="intro-box">
 
-        <p class="eyebrow">
-            PERSONAL PROFILE
-        </p>
+        <p>ABOUT MY PORTFOLIO</p>
 
         <h2>
-            ประวัติส่วนตัว
+            เก็บทุกความพยายาม<br>
+            ไว้เป็นความภาคภูมิใจ
         </h2>
 
-        <p>
-            ตัวตน ความสนใจ และประสบการณ์ที่หล่อหลอมตัวฉัน
+        <span></span>
+
+        <p class="intro-detail">
+            ผลงานทุกชิ้นไม่ได้เป็นเพียงหลักฐานของการทำกิจกรรม
+            แต่เป็นประสบการณ์ที่ช่วยให้ฉันได้เรียนรู้
+            ฝึกความรับผิดชอบ และค้นพบความสามารถของตัวเอง
         </p>
-
-    </div>
-
-
-    <div class="about-grid">
-
-        <div class="profile-photo reveal">
-
-            <img
-                src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/3.png"
-                alt="ประวัติส่วนตัว วิภาดา"
-            >
-
-        </div>
-
-
-        <div class="profile-content reveal">
-
-            <div class="info-card">
-
-                <span class="card-label">
-                    ABOUT ME
-                </span>
-
-                <h3>
-                    สวัสดีค่ะ ฉันชื่อวิภาดา
-                </h3>
-
-                <p>
-                    ดิฉันเป็นนักเรียนที่มีความสนใจด้านการจัดการ
-                    การทำงานร่วมกับผู้อื่น และการพัฒนาทักษะต่าง ๆ
-                    ผ่านการเข้าร่วมกิจกรรมทั้งในและนอกห้องเรียน
-                    พร้อมเรียนรู้สิ่งใหม่และนำประสบการณ์มาพัฒนาตนเอง
-                </p>
-
-            </div>
-
-
-            <div class="facts">
-
-                <div class="fact">
-                    <span>🎓</span>
-                    <div>
-                        <small>ระดับชั้น</small>
-                        <b>มัธยมศึกษาปีที่ 6/1</b>
-                    </div>
-                </div>
-
-                <div class="fact">
-                    <span>🏫</span>
-                    <div>
-                        <small>โรงเรียน</small>
-                        <b>กระทุ่มแบน “วิเศษสมุทคุณ”</b>
-                    </div>
-                </div>
-
-                <div class="fact">
-                    <span>📦</span>
-                    <div>
-                        <small>ความสนใจ</small>
-                        <b>การจัดการโลจิสติกส์</b>
-                    </div>
-                </div>
-
-                <div class="fact">
-                    <span>✨</span>
-                    <div>
-                        <small>จุดเด่น</small>
-                        <b>การสื่อสารและการทำงานเป็นทีม</b>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
 
     </div>
 
 </section>
 
 
-<!-- ================= SOP ================= -->
+<!-- ================= PORTFOLIO PAGES ================= -->
 
-<section class="section sop-section" id="sop">
+<main>
 
-    <div class="section-heading reveal">
 
-        <p class="eyebrow">
-            STATEMENT OF PURPOSE
-        </p>
+<!-- PAGE 1 -->
 
-        <h2>
-            Statement of Purpose
-        </h2>
+<section class="portfolio-section" id="page-1">
 
-        <p>
-            เหตุผลและแรงบันดาลใจในการศึกษาต่อ
-        </p>
+    <div class="page-head">
+        <div>
+            <small>PORTFOLIO / 01</small>
+            <h2>หน้าปก</h2>
+        </div>
 
+        <span>01</span>
     </div>
 
+    <div class="image-card big-card">
+        <img
+            src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/1.png"
+            alt="หน้าปก"
+        >
+    </div>
 
-    <div class="sop-image-card reveal">
+</section>
 
+
+<!-- PAGE 2 -->
+
+<section class="portfolio-section" id="page-2">
+
+    <div class="page-head">
+        <div>
+            <small>PORTFOLIO / 02</small>
+            <h2>Statement of Purpose</h2>
+        </div>
+
+        <span>02</span>
+    </div>
+
+    <div class="image-card">
         <img
             src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/2.png"
             alt="Statement of Purpose"
+            loading="lazy"
         >
-
     </div>
 
 </section>
 
 
-<!-- ================= ACTIVITIES ================= -->
+<!-- PAGE 3 -->
 
-<section class="section" id="activities">
+<section class="portfolio-section" id="page-3">
 
-    <div class="section-heading reveal">
+    <div class="page-head">
+        <div>
+            <small>PORTFOLIO / 03</small>
+            <h2>ประวัติส่วนตัว</h2>
+        </div>
 
-        <p class="eyebrow">
-            ACTIVITIES
-        </p>
-
-        <h2>
-            ผลงานและกิจกรรม
-        </h2>
-
-        <p>
-            ประสบการณ์ที่ช่วยพัฒนาความสามารถและตัวตนของฉัน
-        </p>
-
+        <span>03</span>
     </div>
 
-
-    <div class="activity-grid">
-
-
-        <!-- 01 -->
-
-        <article class="activity-card reveal">
-
-            <div class="activity-image">
-                <img
-                    src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/5.png"
-                    alt="ผลงานด้านธุรกิจและการค้าขาย"
-                >
-            </div>
-
-            <div class="activity-body">
-
-                <span class="tag">
-                    BUSINESS
-                </span>
-
-                <h3>
-                    ผลงานด้านธุรกิจและการค้าขาย
-                </h3>
-
-                <p>
-                    ประสบการณ์จากการเข้าร่วมกิจกรรม
-                    การขายสินค้าและการทำงานร่วมกับผู้อื่น
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- 02 -->
-
-        <article class="activity-card reveal">
-
-            <div class="activity-image">
-                <img
-                    src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/6.png"
-                    alt="ผลงานด้านความเป็นผู้นำ"
-                >
-            </div>
-
-            <div class="activity-body">
-
-                <span class="tag">
-                    LEADERSHIP
-                </span>
-
-                <h3>
-                    ผลงานด้านความเป็นผู้นำ
-                </h3>
-
-                <p>
-                    กิจกรรมที่ได้ฝึกความรับผิดชอบ
-                    การวางแผน และการทำงานร่วมกับผู้อื่น
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- 03 -->
-
-        <article class="activity-card reveal">
-
-            <div class="activity-image">
-                <img
-                    src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/7.png"
-                    alt="การคิดวิเคราะห์และแก้ปัญหา"
-                >
-            </div>
-
-            <div class="activity-body">
-
-                <span class="tag">
-                    PROBLEM SOLVING
-                </span>
-
-                <h3>
-                    การคิดวิเคราะห์และแก้ปัญหา
-                </h3>
-
-                <p>
-                    ฝึกการคิดอย่างเป็นระบบ
-                    วิเคราะห์ปัญหา และค้นหาแนวทางแก้ไข
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- 04 -->
-
-        <article class="activity-card reveal">
-
-            <div class="activity-image">
-                <img
-                    src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/8.png"
-                    alt="ผลงานด้านการสื่อสาร"
-                >
-            </div>
-
-            <div class="activity-body">
-
-                <span class="tag">
-                    COMMUNICATION
-                </span>
-
-                <h3>
-                    ผลงานด้านการสื่อสาร
-                </h3>
-
-                <p>
-                    พัฒนาทักษะการพูด การนำเสนอ
-                    และการสื่อสารกับผู้อื่น
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- 05 -->
-
-        <article class="activity-card reveal">
-
-            <div class="activity-image">
-
-                <img
-                    src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/4.png"
-                    alt="ผลการเรียน"
-                >
-
-            </div>
-
-            <div class="activity-body">
-
-                <span class="tag">
-                    EDUCATION
-                </span>
-
-                <h3>
-                    ผลการเรียน
-                </h3>
-
-                <p>
-                    ผลการเรียนและความตั้งใจในการศึกษา
-                    ตลอดช่วงเวลาของการเรียน
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- 06 -->
-
-        <article class="activity-card reveal">
-
-            <div class="activity-image">
-
-                <img
-                    src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/3.png"
-                    alt="ประสบการณ์และการพัฒนาตนเอง"
-                >
-
-            </div>
-
-            <div class="activity-body">
-
-                <span class="tag">
-                    EXPERIENCE
-                </span>
-
-                <h3>
-                    ประสบการณ์และการพัฒนาตนเอง
-                </h3>
-
-                <p>
-                    ทุกกิจกรรมเป็นโอกาสในการเรียนรู้
-                    และพัฒนาทักษะเพื่ออนาคต
-                </p>
-
-            </div>
-
-        </article>
-
+    <div class="image-card">
+        <img
+            src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/3.png"
+            alt="ประวัติส่วนตัว"
+            loading="lazy"
+        >
     </div>
 
 </section>
 
 
-<!-- ================= CERTIFICATES ================= -->
+<!-- PAGE 4 -->
 
-<section class="section certificates" id="certificates">
+<section class="portfolio-section" id="page-4">
 
-    <div class="section-heading reveal">
+    <div class="page-head">
+        <div>
+            <small>PORTFOLIO / 04</small>
+            <h2>ผลการเรียน</h2>
+        </div>
 
-        <p class="eyebrow">
-            CERTIFICATES
-        </p>
-
-        <h2>
-            เกียรติบัตรและผลงาน
-        </h2>
-
-        <p>
-            รวบรวมเกียรติบัตรและผลงานที่ภาคภูมิใจ
-        </p>
-
+        <span>04</span>
     </div>
 
-
-    <div class="certificate-grid">
-
-
-        <div class="certificate-card reveal">
-
-            <span class="certificate-number">
-                01
-            </span>
-
-            <img
-                src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/9.png"
-                alt="เกียรติบัตรชุดที่ 1"
-            >
-
-        </div>
-
-
-        <div class="certificate-card reveal">
-
-            <span class="certificate-number">
-                02
-            </span>
-
-            <img
-                src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/10.png"
-                alt="เกียรติบัตรชุดที่ 2"
-            >
-
-        </div>
-
-
-        <div class="certificate-card reveal">
-
-            <span class="certificate-number">
-                03
-            </span>
-
-            <img
-                src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/11.png"
-                alt="เกียรติบัตรชุดที่ 3"
-            >
-
-        </div>
-
+    <div class="image-card">
+        <img
+            src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/4.png"
+            alt="ผลการเรียน"
+            loading="lazy"
+        >
     </div>
 
 </section>
 
 
-<!-- ================= BACK COVER ================= -->
+<!-- PAGE 5 -->
 
-<section class="section thank-section" id="contact">
+<section class="portfolio-section" id="page-5">
 
-    <div class="thank-card reveal">
+    <div class="page-head">
+        <div>
+            <small>PORTFOLIO / 05</small>
+            <h2>ผลงานด้านธุรกิจและการค้าขาย</h2>
+        </div>
 
+        <span>05</span>
+    </div>
+
+    <div class="image-card">
+        <img
+            src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/5.png"
+            alt="ผลงานด้านธุรกิจและการค้าขาย"
+            loading="lazy"
+        >
+    </div>
+
+</section>
+
+
+<!-- PAGE 6 -->
+
+<section class="portfolio-section" id="page-6">
+
+    <div class="page-head">
+        <div>
+            <small>PORTFOLIO / 06</small>
+            <h2>ผลงานด้านความเป็นผู้นำ</h2>
+        </div>
+
+        <span>06</span>
+    </div>
+
+    <div class="image-card">
+        <img
+            src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/6.png"
+            alt="ผลงานด้านความเป็นผู้นำ"
+            loading="lazy"
+        >
+    </div>
+
+</section>
+
+
+<!-- PAGE 7 -->
+
+<section class="portfolio-section" id="page-7">
+
+    <div class="page-head">
+        <div>
+            <small>PORTFOLIO / 07</small>
+            <h2>การคิดวิเคราะห์และแก้ปัญหา</h2>
+        </div>
+
+        <span>07</span>
+    </div>
+
+    <div class="image-card">
+        <img
+            src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/7.png"
+            alt="การคิดวิเคราะห์และแก้ปัญหา"
+            loading="lazy"
+        >
+    </div>
+
+</section>
+
+
+<!-- PAGE 8 -->
+
+<section class="portfolio-section" id="page-8">
+
+    <div class="page-head">
+        <div>
+            <small>PORTFOLIO / 08</small>
+            <h2>ผลงานด้านการสื่อสาร</h2>
+        </div>
+
+        <span>08</span>
+    </div>
+
+    <div class="image-card">
+        <img
+            src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/8.png"
+            alt="ผลงานด้านการสื่อสาร"
+            loading="lazy"
+        >
+    </div>
+
+</section>
+
+
+<!-- PAGE 9 -->
+
+<section class="portfolio-section" id="page-9">
+
+    <div class="page-head">
+        <div>
+            <small>PORTFOLIO / 09</small>
+            <h2>เกียรติบัตรและผลงาน</h2>
+        </div>
+
+        <span>09</span>
+    </div>
+
+    <div class="image-card">
+        <img
+            src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/9.png"
+            alt="เกียรติบัตร"
+            loading="lazy"
+        >
+    </div>
+
+</section>
+
+
+<!-- PAGE 10 -->
+
+<section class="portfolio-section" id="page-10">
+
+    <div class="page-head">
+        <div>
+            <small>PORTFOLIO / 10</small>
+            <h2>เกียรติบัตรและผลงาน</h2>
+        </div>
+
+        <span>10</span>
+    </div>
+
+    <div class="image-card">
+        <img
+            src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/10.png"
+            alt="เกียรติบัตร"
+            loading="lazy"
+        >
+    </div>
+
+</section>
+
+
+<!-- PAGE 11 -->
+
+<section class="portfolio-section" id="page-11">
+
+    <div class="page-head">
+        <div>
+            <small>PORTFOLIO / 11</small>
+            <h2>เกียรติบัตรและผลงาน</h2>
+        </div>
+
+        <span>11</span>
+    </div>
+
+    <div class="image-card">
+        <img
+            src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/11.png"
+            alt="เกียรติบัตร"
+            loading="lazy"
+        >
+    </div>
+
+</section>
+
+
+<!-- PAGE 12 -->
+
+<section class="portfolio-section last-page" id="page-12">
+
+    <div class="page-head">
+        <div>
+            <small>PORTFOLIO / 12</small>
+            <h2>Thank You</h2>
+        </div>
+
+        <span>12</span>
+    </div>
+
+    <div class="image-card">
         <img
             src="นางสาววิภาดา แสงจันทร์ ชั้นม.61 เลขที่26 (1)/12.png"
-            alt="ปกหลัง Portfolio วิภาดา"
+            alt="ปกหลัง"
+            loading="lazy"
         >
-
-        <div class="thank-overlay">
-
-            <p>
-                THANK YOU
-            </p>
-
-            <h2>
-                วิภาดา แสงจันทร์
-            </h2>
-
-            <a href="#top" class="back-top">
-                ↑ กลับด้านบน
-            </a>
-
-        </div>
-
     </div>
 
+    <a href="#top" class="top-button">
+        ↑ กลับด้านบน
+    </a>
+
 </section>
+
 
 </main>
 
@@ -587,15 +440,17 @@
 
 <footer>
 
-    <div class="footer-line"></div>
-
-    <p>
-        PORTFOLIO • WIPHADA SAENGCHAN
-    </p>
+    <div class="footer-logo">
+        WIPHADA<span>.</span>
+    </div>
 
     <h3>
         วิภาดา แสงจันทร์
     </h3>
+
+    <p>
+        PORTFOLIO • 2026
+    </p>
 
     <small>
         © 2026 Wiphada Saengchan

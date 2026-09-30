@@ -645,5 +645,14 @@ footer {
     padding: 6px 9px;
     font-size: 12px;
   }
+.hidden {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: .7s ease;
+}
 
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 }

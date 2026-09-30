@@ -1,12 +1,12 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
   /* เลื่อนหน้าแบบนุ่มนวล */
 
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 
-    link.addEventListener("click", event => {
+    link.addEventListener("click", function (event) {
 
-      const targetId = link.getAttribute("href");
+      const targetId = this.getAttribute("href");
 
       if (targetId === "#") return;
 
@@ -28,43 +28,67 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  /* Animation */
+  /* เปิดรูปใหญ่ */
 
-  const elements = document.querySelectorAll(
-    ".section, .card, .activity, .certificate"
-  );
+  const modal = document.getElementById("imageModal");
+  const modalImage = document.getElementById("modalImage");
+  const closeModal = document.getElementById("closeModal");
 
-  const observer = new IntersectionObserver(
-    entries => {
+  const images = document.querySelectorAll(".clickable-image");
 
-      entries.forEach(entry => {
+  images.forEach(function (image) {
 
-        if (entry.isIntersecting) {
+    image.addEventListener("click", function () {
 
-          entry.target.style.opacity = "1";
-          entry.target.style.transform = "translateY(0)";
+      modalImage.src = this.src;
+      modalImage.alt = this.alt;
 
-        }
+      modal.classList.add("show");
 
-      });
+      document.body.style.overflow = "hidden";
 
-    },
-    {
-      threshold: 0.1
+    });
+
+  });
+
+
+  /* ปิดรูป */
+
+  closeModal.addEventListener("click", function () {
+
+    modal.classList.remove("show");
+
+    document.body.style.overflow = "";
+
+  });
+
+
+  /* คลิกพื้นหลังเพื่อปิด */
+
+  modal.addEventListener("click", function (event) {
+
+    if (event.target === modal) {
+
+      modal.classList.remove("show");
+
+      document.body.style.overflow = "";
+
     }
-  );
+
+  });
 
 
-  elements.forEach(element => {
+  /* กด ESC เพื่อปิด */
 
-    element.style.opacity = "0";
+  document.addEventListener("keydown", function (event) {
 
-    element.style.transform = "translateY(25px)";
+    if (event.key === "Escape") {
 
-    element.style.transition =
-      "opacity .7s ease, transform .7s ease";
+      modal.classList.remove("show");
 
-    observer.observe(element);
+      document.body.style.overflow = "";
+
+    }
 
   });
 

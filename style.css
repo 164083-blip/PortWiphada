@@ -608,5 +608,266 @@ footer {
     .activities-title .number {
         font-size: 35px;
     }
+/* =========================================================
+   WIPHADA PORTFOLIO
+   WORKS — 4 BLOCK STYLE
+   ========================================================= */
 
+.works-section {
+    position: relative;
+    width: min(1180px, 90%);
+    margin: 0 auto;
+    padding: 110px 0 120px;
+    scroll-margin-top: var(--nav-height);
+}
+
+
+/* =========================
+   หัวข้อผลงาน
+   ========================= */
+
+.works-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 42px;
+}
+
+.works-label {
+    display: block;
+    margin-bottom: 7px;
+
+    color: #174ea6;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: .18em;
+}
+
+.works-heading h2 {
+    color: #123b73;
+
+    font-family: var(--font-main);
+
+    font-size: clamp(32px, 5vw, 50px);
+    font-weight: 700;
+
+    line-height: 1.25;
+}
+
+.works-heading p {
+    margin-top: 7px;
+
+    color: #718096;
+
+    font-size: 15px;
+}
+
+.works-number {
+    color: #174ea6;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 70px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    opacity: .12;
+}
+
+
+/* =========================
+   GRID 4 บล็อก
+   ========================= */
+
+.works-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 28px;
+}
+
+
+/* =========================
+   CARD
+   ========================= */
+
+.work-card {
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #dce7f5;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(23, 78, 166, .09);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.work-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 25px 55px rgba(23, 78, 166, .16);
+}
+
+
+/* =========================
+   รูปผลงาน
+   ========================= */
+
+.work-image {
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    padding: 14px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #edf5ff,
+            #f8fbff
+        );
+}
+
+.work-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    transition:
+        transform .35s ease;
+}
+
+.work-card:hover .work-image img {
+    transform: scale(1.02);
+}
+
+
+/* =========================
+   ข้อความใต้รูป
+   ========================= */
+
+.work-content {
+    padding: 21px 24px 25px;
+
+    background: #ffffff;
+}
+
+.work-content span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #3478c9;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: .13em;
+}
+
+.work-content h3 {
+    color: #123b73;
+
+    font-family: var(--font-main);
+
+    font-size: 20px;
+    font-weight: 600;
+
+    line-height: 1.45;
+}
+
+.work-content p {
+    margin-top: 7px;
+
+    color: #718096;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 750px) {
+
+    .works-section {
+        width: 92%;
+
+        padding:
+            75px 0
+            90px;
+    }
+
+    .works-heading {
+        align-items: flex-start;
+
+        margin-bottom: 30px;
+    }
+
+    .works-heading h2 {
+        font-size: 33px;
+    }
+
+    .works-heading p {
+        font-size: 14px;
+    }
+
+    .works-number {
+        font-size: 45px;
+    }
+
+    .works-grid {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+    .work-image {
+        aspect-ratio: 4 / 3;
+
+        padding: 10px;
+    }
+
+    .work-content {
+        padding:
+            18px 20px
+            22px;
+    }
+
+    .work-content h3 {
+        font-size: 18px;
+    }
+
+}
 }

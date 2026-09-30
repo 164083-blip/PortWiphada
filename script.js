@@ -1,97 +1,71 @@
+/* ===============================
+   Portfolio JavaScript
+   =============================== */
+
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* ================= MENU ================= */
+    /* Smooth scroll สำหรับเมนู */
 
-    const menuBtn = document.getElementById("menuBtn");
-    const navMenu = document.getElementById("navMenu");
+    const links = document.querySelectorAll('a[href^="#"]');
 
-    menuBtn.addEventListener("click", function () {
+    links.forEach(function (link) {
 
-        navMenu.classList.toggle("active");
+        link.addEventListener("click", function (event) {
 
-        if (navMenu.classList.contains("active")) {
-            menuBtn.textContent = "✕";
-        } else {
-            menuBtn.textContent = "☰";
-        }
+            const targetId = this.getAttribute("href");
 
-    });
+            if (targetId === "#") return;
 
+            const target = document.querySelector(targetId);
 
-    /* ================= CLOSE MENU ================= */
-
-    const navLinks = document.querySelectorAll(".nav-menu a");
-
-    navLinks.forEach(function (link) {
-
-        link.addEventListener("click", function () {
-
-            navMenu.classList.remove("active");
-
-            menuBtn.textContent = "☰";
-
-        });
-
-    });
-
-
-    /* ================= SCROLL EFFECT ================= */
-
-    window.addEventListener("scroll", function () {
-
-        const navbar =
-            document.querySelector(".navbar");
-
-        if (window.scrollY > 50) {
-
-            navbar.style.boxShadow =
-                "0 10px 35px rgba(103,16,29,.09)";
-
-        } else {
-
-            navbar.style.boxShadow =
-                "0 8px 30px rgba(70,20,30,.04)";
-
-        }
-
-    });
-
-
-    /* ================= IMAGE CHECK ================= */
-
-    const images =
-        document.querySelectorAll("img");
-
-    images.forEach(function (img) {
-
-        img.addEventListener("error", function () {
-
-            console.warn(
-                "ไม่พบรูป:",
-                img.getAttribute("src")
-            );
-
-        });
-
-    });
-
-
-    /* ================= TOP BUTTON ================= */
-
-    document.querySelectorAll('a[href="#top"]')
-        .forEach(function (button) {
-
-            button.addEventListener("click", function (event) {
+            if (target) {
 
                 event.preventDefault();
 
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
                 });
+
+            }
+
+        });
+
+    });
+
+
+    /* Animation ตอนเลื่อนหน้า */
+
+    const cards = document.querySelectorAll(
+        ".work-card, .certificate-card, .profile-box, .sop-box"
+    );
+
+    const observer = new IntersectionObserver(
+        function (entries) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                }
 
             });
 
-        });
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+    cards.forEach(function (card) {
+
+        card.classList.add("fade-item");
+
+        observer.observe(card);
+
+    });
 
 });

@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* =========================
-     SMOOTH SCROLL
-  ========================= */
+  /* เลื่อนหน้าแบบนุ่มนวล */
 
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 
@@ -10,9 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const targetId = this.getAttribute("href");
 
-      if (targetId === "#") {
-        return;
-      }
+      if (targetId === "#") return;
 
       const target = document.querySelector(targetId);
 
@@ -32,56 +28,19 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-  /* =========================
-     PROGRESS BAR
-  ========================= */
+  /* เปิดรูปใหญ่ */
 
-  const progressBar =
-    document.getElementById("progress-bar");
+  const modal = document.getElementById("imageModal");
+  const modalImage = document.getElementById("modalImage");
+  const closeModal = document.getElementById("closeModal");
 
-  window.addEventListener("scroll", function () {
-
-    const scrollTop =
-      window.scrollY;
-
-    const documentHeight =
-      document.documentElement.scrollHeight -
-      window.innerHeight;
-
-    const progress =
-      documentHeight > 0
-        ? (scrollTop / documentHeight) * 100
-        : 0;
-
-    progressBar.style.width =
-      progress + "%";
-
-  });
-
-
-  /* =========================
-     IMAGE MODAL
-  ========================= */
-
-  const modal =
-    document.getElementById("imageModal");
-
-  const modalImage =
-    document.getElementById("modalImage");
-
-  const closeModal =
-    document.getElementById("closeModal");
-
-  const images =
-    document.querySelectorAll(".clickable-image");
-
+  const images = document.querySelectorAll(".clickable-image");
 
   images.forEach(function (image) {
 
     image.addEventListener("click", function () {
 
       modalImage.src = this.src;
-
       modalImage.alt = this.alt;
 
       modal.classList.add("show");
@@ -93,48 +52,44 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-  /* =========================
-     CLOSE MODAL
-  ========================= */
+  /* ปิดรูป */
 
-  function closeImageModal() {
+  closeModal.addEventListener("click", function () {
 
     modal.classList.remove("show");
 
-    modalImage.src = "";
-
     document.body.style.overflow = "";
 
-  }
+  });
 
 
-  closeModal.addEventListener(
-    "click",
-    closeImageModal
-  );
+  /* คลิกพื้นหลังเพื่อปิด */
 
+  modal.addEventListener("click", function (event) {
 
-  modal.addEventListener(
-    "click",
-    function (event) {
+    if (event.target === modal) {
 
-      if (event.target === modal) {
-        closeImageModal();
-      }
+      modal.classList.remove("show");
+
+      document.body.style.overflow = "";
 
     }
-  );
+
+  });
 
 
-  document.addEventListener(
-    "keydown",
-    function (event) {
+  /* กด ESC เพื่อปิด */
 
-      if (event.key === "Escape") {
-        closeImageModal();
-      }
+  document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+
+      modal.classList.remove("show");
+
+      document.body.style.overflow = "";
 
     }
-  );
+
+  });
 
 });

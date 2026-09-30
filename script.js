@@ -1,14 +1,15 @@
-// Portfolio Wiphada
-// Smooth scrolling และ animation เล็กน้อย
+document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener("DOMContentLoaded", () => {
+  /* Smooth Scroll */
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 
-  const links = document.querySelectorAll('a[href^="#"]');
-
-  links.forEach(link => {
     link.addEventListener("click", function (e) {
 
-      const target = document.querySelector(this.getAttribute("href"));
+      const targetId = this.getAttribute("href");
+
+      if (targetId === "#") return;
+
+      const target = document.querySelector(targetId);
 
       if (target) {
         e.preventDefault();
@@ -20,18 +21,19 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
     });
+
   });
 
 
-  // แสดง animation เมื่อเลื่อนถึงแต่ละส่วน
-  const cards = document.querySelectorAll(
-    ".portfolio-card, .activity-card, .certificate-card, .profile-box, .education-card"
+  /* Animation */
+  const sections = document.querySelectorAll(
+    ".section, .portfolio-card, .activity-card, .certificate-card"
   );
 
   const observer = new IntersectionObserver(
-    entries => {
+    function (entries) {
 
-      entries.forEach(entry => {
+      entries.forEach(function (entry) {
 
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
@@ -46,9 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
 
-  cards.forEach(card => {
-    card.classList.add("hidden");
-    observer.observe(card);
+  sections.forEach(function (section) {
+    section.classList.add("hidden");
+    observer.observe(section);
   });
 
 });

@@ -1,23 +1,26 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-  /* Smooth Scroll */
-  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+  /* เลื่อนหน้าแบบนุ่มนวล */
 
-    link.addEventListener("click", function (e) {
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-      const targetId = this.getAttribute("href");
+    link.addEventListener("click", event => {
+
+      const targetId = link.getAttribute("href");
 
       if (targetId === "#") return;
 
       const target = document.querySelector(targetId);
 
       if (target) {
-        e.preventDefault();
+
+        event.preventDefault();
 
         target.scrollIntoView({
           behavior: "smooth",
           block: "start"
         });
+
       }
 
     });
@@ -26,31 +29,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* Animation */
-  const sections = document.querySelectorAll(
-    ".section, .portfolio-card, .activity-card, .certificate-card"
+
+  const elements = document.querySelectorAll(
+    ".section, .card, .activity, .certificate"
   );
 
   const observer = new IntersectionObserver(
-    function (entries) {
+    entries => {
 
-      entries.forEach(function (entry) {
+      entries.forEach(entry => {
 
         if (entry.isIntersecting) {
-          entry.target.classList.add("show");
+
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+
         }
 
       });
 
     },
     {
-      threshold: 0.12
+      threshold: 0.1
     }
   );
 
 
-  sections.forEach(function (section) {
-    section.classList.add("hidden");
-    observer.observe(section);
+  elements.forEach(element => {
+
+    element.style.opacity = "0";
+
+    element.style.transform = "translateY(25px)";
+
+    element.style.transition =
+      "opacity .7s ease, transform .7s ease";
+
+    observer.observe(element);
+
   });
 
 });
